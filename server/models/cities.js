@@ -18,4 +18,4 @@ class Cities {
     }
 }
 
-module.exports = cities;
+module.exports = Cities;
