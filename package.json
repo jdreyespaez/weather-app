@@ -4,7 +4,9 @@
   "description": "Full stack app that fetchs public weather API",
   "main": "index.js",
   "scripts": {
-    "server": "nodemon server"
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "client": "npm start --prefix client",
+    "server": "nodemon server",
   },
   "repository": {
     "type": "git",
