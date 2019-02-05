@@ -1,6 +1,6 @@
 var { Pool } = require('pg');
 
-const CONNECTION_STRING = process.env.DATABASE_URL || 'postgresql://postgres:postgres@localhost:5433/weather-db';
+const CONNECTION_STRING = process.env.DATABASE_URL || 'postgresql://postgres:Postgres1990!@localhost:5433/weather-db';
 const SSL = process.env.NODE_ENV === 'production';
 
 class Database {
