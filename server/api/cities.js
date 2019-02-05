@@ -20,3 +20,5 @@ router.post('/', function (req, res) {
         return res.json(result);
     });
 });
+
+module.exports = router;
