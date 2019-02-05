@@ -16,4 +16,4 @@ class Weather {
     }
 }
 
-module.export = Weather;
+module.exports = Weather;
