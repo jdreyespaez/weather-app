@@ -5,7 +5,8 @@ import {
   Navbar,
   NavbarBrand,
   Row,
-  Col
+  Col,
+  Jumbotron,
 } from 'reactstrap';
 
 import Weather from './Weather'
@@ -42,7 +43,12 @@ class App extends Component {
           <NavbarBrand href="/">MyWeather</NavbarBrand>
         </Navbar>
         <Row>
-          <Col></Col>
+          <Col>
+          <Jumbotron>
+            <h1 className="display-3">MyWeather</h1>
+            <p className="lead">The current list weather from your favorite cities!</p>
+          </Jumbotron>
+          </Col>
         </Row>
         <Row>
           <Col>
