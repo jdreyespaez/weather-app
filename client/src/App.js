@@ -8,7 +8,9 @@ import {
   Col,
   Jumbotron,
   InputGroup,
-  Input
+  Input,
+  Button,
+  InputGroupAddon,
 } from 'reactstrap';
 
 import Weather from './Weather'
@@ -54,17 +56,19 @@ class App extends Component {
           <Jumbotron>
             <h1 className="display-3">MyWeather</h1>
             <p className="lead">The current list weather from your favorite cities!</p>
-          </Jumbotron>
-
-          <InputGroup>
           
-            <Input 
-              placeholder="New city name..."
-              value={this.state.newCityName}
-              onChange={this.handleInputChange}
-            />
+            <InputGroup>
+              <Input 
+                placeholder="New city name..."
+                value={this.state.newCityName}
+                onChange={this.handleInputChange}
+              />
+              <InputGroupAddon addonType="append">
+                <Button color="primary" onClick={this.handleAddCity}>Add City</Button>
+              </InputGroupAddon>
+            </InputGroup>
 
-          </InputGroup>
+          </Jumbotron>
 
           </Col>
         </Row>
