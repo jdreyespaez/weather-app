@@ -7,9 +7,12 @@ import {
   Row,
   Col,
   Jumbotron,
+  InputGroup,
+  Input
 } from 'reactstrap';
 
 import Weather from './Weather'
+import { runInThisContext } from 'vm';
 
 class App extends Component {
 
@@ -32,6 +35,10 @@ class App extends Component {
     });
   };
 
+  handleInputChange = (e) => {
+    this.setState({ newCityName: e.target.value });
+  }
+
   componentDidMount () {
     this.getCityList();
   }
@@ -48,6 +55,17 @@ class App extends Component {
             <h1 className="display-3">MyWeather</h1>
             <p className="lead">The current list weather from your favorite cities!</p>
           </Jumbotron>
+
+          <InputGroup>
+          
+            <Input 
+              placeholder="New city name..."
+              value={this.state.newCityName}
+              onChange={this.handleInputChange}
+            />
+
+          </InputGroup>
+
           </Col>
         </Row>
         <Row>
