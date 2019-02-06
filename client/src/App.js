@@ -11,6 +11,7 @@ import {
   Input,
   Button,
   InputGroupAddon,
+  FormGroup,
 } from 'reactstrap';
 
 import Weather from './Weather'
@@ -39,6 +40,31 @@ class App extends Component {
 
   handleInputChange = (e) => {
     this.setState({ newCityName: e.target.value });
+  };
+
+  handleAddCity = () => {
+    fetch('/api/cities', {
+      method: 'post',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ city: this.state.newCityName })
+    })
+    .then(res => res.json())
+    .then(res => {
+      this.getCityList();
+      this.setState({ newCityName: '' });
+    });
+  };
+
+  getWeather = (city) => {
+    fetch(`/api/wetaher/${city}`)
+    .then(res => res.json())
+    .then(weather => {
+      this.setState({ weather });
+    });
+  }
+
+  handleChangeCity = (e) => {
+    this.getWeather(e.target.value);
   }
 
   componentDidMount () {
@@ -74,6 +100,11 @@ class App extends Component {
         </Row>
         <Row>
           <Col>
+            <h1 className="display-5">Current weather</h1>
+            <FormGroup>
+              <Input type="select" onChange={this.handleChangeCity}>
+              </Input>
+            </FormGroup>
           </Col>
         </Row>
         <Weather />
