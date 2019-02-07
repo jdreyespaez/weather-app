@@ -15,7 +15,7 @@ import {
 } from 'reactstrap';
 
 import Weather from './Weather'
-import { runInThisContext } from 'vm';
+//import { runInThisContext } from 'vm';
 
 class App extends Component {
 
