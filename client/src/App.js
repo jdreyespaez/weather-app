@@ -56,9 +56,10 @@ class App extends Component {
   };
 
   getWeather = (city) => {
-    fetch(`/api/wetaher/${city}`)
+    fetch(`/api/weather/${city}`)
     .then(res => res.json())
     .then(weather => {
+      console.log(weather);
       this.setState({ weather });
     });
   }
